@@ -1,28 +1,28 @@
-import React from "react";
-import Model from "../UI/Model";
-import classes from "./Cart.module.css";
+import Modal from '../UI/Modal';
+import classes from './Cart.module.css';
 
-function Cart(props) {
+const Cart = (props) => {
   const cartItems = (
-    <ul className={classes["cart-items"]}>
-      {[{ id: "c1", name: "Sushi", amount:2, price: 12.99 }].map((item) => (
-        <li key={item.id}>{item.name}</li>
+    <ul className={classes['cart-items']}>
+      {[{ id: 'c1', name: 'Sushi', amount: 2, price: 12.99 }].map((item) => (
+        <li>{item.name}</li>
       ))}
     </ul>
   );
+
   return (
-    <Model>
+    <Modal>
       {cartItems}
       <div className={classes.total}>
-        <span>Total amount</span>
+        <span>Total Amount</span>
         <span>35.62</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes["button--alt"]}>Close</button>
+        <button className={classes['button--alt']}>Close</button>
         <button className={classes.button}>Order</button>
       </div>
-    </Model>
+    </Modal>
   );
-}
+};
 
 export default Cart;
